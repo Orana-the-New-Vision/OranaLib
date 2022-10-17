@@ -1,0 +1,12 @@
+.button-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 5px 5px 35px 0 rgba(0,0,0,1);
+}
+
+.button-inner {
+    padding: 5px 20px;
+    font-size: 14pt;
+}
