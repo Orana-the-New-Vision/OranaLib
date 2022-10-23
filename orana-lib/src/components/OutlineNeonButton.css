@@ -11,67 +11,6 @@ element {
 
 }
 
-.button {
-    position: relative;
-    text-transform: uppercase;
-    font-size: 25px;
-    letter-spacing: 0.1em;
-    font-weight: 400;
-    padding: 10px 25px;
-    transition: 0.5s;
-
-}
-
-.button:hover {
-    letter-spacing: 0.25em;
-    background: #219afe !important;
-    box-shadow: 0 0 35px #219afe;
-}
-
-.button:before {
-    content: '';
-    position: absolute;
-    inset: 2px;
-    background: black;
-}
-
-a { 
-
-    text-decoration: none;
-    color: white;
-    position: relative;
-    
-}
-
-a:hover {
-    color: #219afe;
-}
-
-.button .up {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top: 0;
-    left: 80%;
-    background: black;
-    transition: 0.5s ease-out;
-    transform: skewX(120deg);
-
-}
-
-.button .down {
-    position: absolute;
-    width: 10px;
-    height: 5px;
-    bottom: 0;
-    right: 80%;
-    background: black;
-    transition: 0.5s ease-out;
-    transform: skewX(120deg);
-
-
-}
-
 .button:hover .up {
     left: 20%;
 }
@@ -84,7 +23,7 @@ a:hover {
     margin-top: 30px;
     width: 150px;
     height: 20px;
-    background: #219afe;
+
     transform: rotateX(40deg) scale(1, 0.35);
     filter: blur(9px);
     opacity: 0;
@@ -95,7 +34,6 @@ a:hover {
     margin-top: 30px;
     width: 250px;
     height: 20px;
-    background: #219afe;
     transform: rotateX(88deg) scale(1, 0.35);
     filter: blur(20px);
     opacity: .5;
