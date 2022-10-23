@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { css, cx } from "@emotion/css";
 import "./OutlineNeonButton.css";
 
 const OutlineNeonButton = ({
-    handleClick,
-    colorBg = "#ffffff",
-    colorTxt = "#ffffff",
+    handleClick = () => console.log("Works!"),
+    outlineColor = "#fff",
+    bgColor = "#000",
     buttonTxt = "Click!",
+    neonColor = "#219afe",
     link = "#",
 }) => {
-    const styles = { backgroundColor: colorBg, color: colorTxt };
+    const styles = { backgroundColor: outlineColor };
     const [isHovering, setIsHovering] = useState(false);
 
     return (
@@ -18,12 +20,63 @@ const OutlineNeonButton = ({
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
                 style={styles}
-                className="button">
-                <a href={link}>{buttonTxt}</a>
-                <i className="up"></i>
-                <i className="down"></i>
+                className={css`
+                    position: relative;
+                    text-transform: uppercase;
+                    font-size: 25px;
+                    letter-spacing: 0.1em;
+                    font-weight: 400;
+                    padding: 10px 25px;
+                    transition: 0.5s;
+                    &:hover {
+                        letter-spacing: 0.25em;
+                        background: ${neonColor} !important;
+                        box-shadow: 0 0 35px ${neonColor};
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        inset: 2px;
+                        background: ${bgColor};
+                    }
+                `}>
+                <a
+                    className={css`
+                        text-decoration: none;
+                        color: ${outlineColor};
+                        position: relative;
+                        width: 100%;
+                        &:hover {
+                            color: ${neonColor};
+                        }
+                    `}
+                    href={link}>
+                    {buttonTxt}
+                </a>
+                <i
+                    className={css`
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        top: 0;
+                        left: 80%;
+                        background: ${bgColor};
+                        transition: 0.5s ease-out;
+                        transform: skewX(120deg);
+                    `}></i>
+                <i
+                    className={css`
+                        position: absolute;
+                        width: 10px;
+                        height: 5px;
+                        bottom: 0;
+                        right: 80%;
+                        background: ${bgColor};
+                        transition: 0.5s ease-out;
+                        transform: skewX(120deg);
+                    `}></i>
             </div>
-            <div className={isHovering ? "reflector-hover" : "reflector"}></div>
+            <div style={{ backgroundColor: neonColor }} className={isHovering ? "reflector-hover" : "reflector"}></div>
         </div>
     );
 };

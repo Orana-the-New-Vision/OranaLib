@@ -1,7 +1,13 @@
 import React from "react";
 import "./SimpleButton.css";
 
-const SimpleButton = ({ handleClick, colorBg = "#000000", colorTxt = "#ffffff", buttonTxt = "Click!", link = "#" }) => {
+const SimpleButton = ({
+    handleClick = () => console.log("Works!"),
+    colorBg = "#000000",
+    colorTxt = "#ffffff",
+    buttonTxt = "Click!",
+    link = "#",
+}) => {
     const styles = { backgroundColor: colorBg, color: colorTxt };
 
     return (

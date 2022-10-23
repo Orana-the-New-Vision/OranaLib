@@ -4,8 +4,8 @@ import OutlineNeonButton from "./components/OutlineNeonButton";
 function App() {
     return (
         <div className="App">
-            {/* <SimpleButton handleClick={() => console.log("Clicked!")} /> */}
-            <OutlineNeonButton handleClick={() => console.log("Clicked!")} />
+            {/* <SimpleButton /> */}
+            {/* <OutlineNeonButton /> */}
         </div>
     );
 }
