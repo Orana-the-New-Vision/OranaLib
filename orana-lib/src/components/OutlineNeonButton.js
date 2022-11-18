@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { css, cx } from "@emotion/css";
 import "./OutlineNeonButton.css";
+import halloween from "../assets/HALLO.png";
 
 const OutlineNeonButton = ({
     handleClick = () => console.log("Works!"),
@@ -54,16 +55,21 @@ const OutlineNeonButton = ({
                     {buttonTxt}
                 </a>
                 <i
-                    className={css`
-                        position: absolute;
-                        width: 10px;
-                        height: 10px;
-                        top: 0;
-                        left: 80%;
-                        background: ${bgColor};
-                        transition: 0.5s ease-out;
-                        transform: skewX(120deg);
-                    `}></i>
+                    className={[
+                        css`
+                            position: absolute;
+                            width: 10px;
+                            height: 10px;
+                            top: 0;
+                            left: 80%;
+                            background: ${bgColor};
+                            transition: 0.5s ease-out;
+                            transform: skewX(120deg);
+                            &:hover {
+                                left: 20%;
+                            }
+                        `,
+                    ]}></i>
                 <i
                     className={css`
                         position: absolute;
@@ -74,9 +80,17 @@ const OutlineNeonButton = ({
                         background: ${bgColor};
                         transition: 0.5s ease-out;
                         transform: skewX(120deg);
+                        &:hover {
+                            right: 20%;
+                        }
                     `}></i>
             </div>
-            <div style={{ backgroundColor: neonColor }} className={isHovering ? "reflector-hover" : "reflector"}></div>
+            <div style={{ backgroundColor: neonColor }} className={isHovering ? "reflector-hover" : "reflector"}>
+                {/* <img src={halloween} className="img-hallo"></img> */}
+            </div>
+            {/* <div>
+                <img src={halloween} className="img-hallo"></img>
+            </div> */}
         </div>
     );
 };

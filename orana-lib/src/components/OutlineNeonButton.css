@@ -36,6 +36,14 @@ element {
     height: 20px;
     transform: rotateX(88deg) scale(1, 0.35);
     filter: blur(20px);
-    opacity: .5;
+    opacity: .8;
     transition: 0.3 ease-out;
+}
+
+.img-hallo {
+    width: 100px;
+    height: auto;
+    z-index: 100;
+    position: relative;
+    left: 20px;
 }
