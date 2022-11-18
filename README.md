@@ -1,2 +1,2 @@
 # OranaLib
-Custom made components, with Orana unique fingerprint.
+Custom made components, with Orana's unique fingerprint.
